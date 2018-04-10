@@ -3,12 +3,22 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+@import "variables/variables";
 
-// Bootstrap
+// vendor libs
 @import '~bootstrap/scss/bootstrap';
+@import "~swiper/dist/css/swiper.css";
+// base styles
+@import './base/base';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// pages
+@import "pages/home";
+
+@mixin myCool($color: red) {
+  color: $color;
+  font-family: "Raleway", sans-serif;
+}
+
+.qwertyu {
+  @include myCool(blue);
 }
