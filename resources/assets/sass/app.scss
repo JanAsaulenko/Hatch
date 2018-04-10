@@ -5,9 +5,9 @@
 // Variables
 @import "variables/variables";
 
-// Bootstrap
+// vendor libs
 @import '~bootstrap/scss/bootstrap';
-
+@import "~swiper/dist/css/swiper.css";
 // base styles
 @import './base/base';
 

@@ -1,1 +1,8 @@
-console.log(134);
+import Swiper from 'swiper';
+
+const swiper = new Swiper('.swiper-container', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
