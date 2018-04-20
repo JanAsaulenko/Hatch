@@ -2,22 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: Сергей
- * Date: 19.04.2018
- * Time: 23:48
+ * Date: 20.04.2018
+ * Time: 19:15
  */
 
 namespace App\Http\Controllers;
 
 
-class ModeratorFormController
+class ComplainsController
 {
     public function index()
     {
         return view('index');
-    }
-
-    public function show()
-    {
-        return view('show');
     }
 }
