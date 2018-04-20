@@ -13,3 +13,4 @@
 
 Route::get('/', 'HomeController@show');
 Route::get('/request-form', 'RequestFormController@show');
+Route::get('/moderator', 'ModeratorFormController@show');
