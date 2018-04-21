@@ -14,11 +14,3 @@
 // pages
 @import "pages/home";
 
-@mixin myCool($color: red) {
-  color: $color;
-  font-family: "Raleway", sans-serif;
-}
-
-.qwertyu {
-  @include myCool(blue);
-}

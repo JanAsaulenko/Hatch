@@ -13,9 +13,11 @@
 
 Route::get('/', 'HomeController@show');
 Route::get('/request-form', 'RequestFormController@show');
+
 Route::resource('moders','ModeratorFormController')->only([
         'index','show','edit']
 );
 Route::resource('complains','ComplainsController')->only([
 'index','show']
 );
+
