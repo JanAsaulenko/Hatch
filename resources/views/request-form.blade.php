@@ -3,10 +3,19 @@
 @section('title', 'Form');
 
 @section('content')
- <input>
-     <input placeholder="value1"/>
-
-     <input type="submit" placeholder="">
-<button onclick="func()">Push</button>
- </form>
+    <form role="form">
+        <div class="form-group">
+            <label for="email">Адрес</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите email">
+            <p class="help-block">Пример строки с подсказкой</p>
+        </div>
+        <div class="form-group">
+            <label for="pass">Пароль</label>
+            <input type="password" class="form-control" id="pass" placeholder="Пароль">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Чекбокс</label>
+        </div>
+        <button type="submit" class="btn btn-success">Войти</button>
+    </form>
 @endsection
