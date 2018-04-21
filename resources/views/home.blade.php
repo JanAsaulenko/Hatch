@@ -21,4 +21,11 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="com-sm-8">dog</div>
+            <div class="com-sm-4">dfsd</div>
+
+        </div>
+    </div>
 @endsection
