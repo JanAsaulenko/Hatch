@@ -20,4 +20,8 @@ class ModeratorFormController
     {
         return view('show');
     }
+    public function edit()
+    {
+        return view('edit');
+    }
 }
