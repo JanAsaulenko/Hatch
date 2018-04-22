@@ -51,29 +51,52 @@
 <!-- Page Content -->
 <div class="container">
 
-    <!-- Page Heading -->
+    <!-- Page Heading
     <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
     </h1>
-
+-->
     <!-- Project One -->
-    <div class="row">
-        <div class="col-md-5">
-            <a href="#">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
-            </a>
+    <form>
+        <div class="row">
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+                <div class="col-md-7"><h2></h2>
+                    <h3><input type="text" name="Adressa" value="Адреса"></h3>
+                    <textarea rows="7" cols="85" id="content" name="content"> "КОМЕНТАРІЙ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore."></textarea>
+                    <p><input type="checkbox" name="Done" value="['Done']"> Одобрено</p>
+                </div>
         </div>
-        <form>
-            <div class="col-md-7">
-                <h3><input type="text" name="Adressa" value="Адреса"></h3>
-                <textarea rows="7" cols="85" id="content" name="content" >"КОМЕНТАРІЙ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero doloremque repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus! Velit, esse totam tempore."</textarea>
-                <p><input type="checkbox" name="Done" value="['Done']"> Одобрено</p>
-
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-md-1">Скарга
+                <p>№1</p>
+            </div>
+            <div class="col-md-1">Скаржник
+                <p>№1</p>
+            </div>
+            <div class="col-md-1">Модер
+                <p>№1</p>
+            </div>
+            <div class="col-md-2">Дата скарги
+                <p><input type="date" name="created" value="2012-06-01"></p>
+            </div>
+            <div class="col-md-4">Стан виконання
+                <p><input name="stat" type="radio" value="new" checked> У черзі
+                <input name="stat" type="radio" value="У роботі">У роботі
+                <input name="stat" type="radio" value="Виконане"> Виконане</p>
+            </div>
+            <div class="col-md-2">
                 <input class="btn btn-primary" type="submit" name="send" value="Зберегти">
             </div>
-        </form>
-    </div>
-    <!-- /.row -->
+
+        </div>
+    </form>
+
+
     <hr>
     <!-- Pagination -->
     <ul class="pagination justify-content-center">
