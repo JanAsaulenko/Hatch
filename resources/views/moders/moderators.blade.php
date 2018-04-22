@@ -1,8 +1,16 @@
-<!-- INSERT INTO hatch1 (Adressa, Commit, Date)
+<!--Це потрібно видалити
+INSERT INTO hatch1 (Adressa, Commit, Date)
 VALUES ('вул.Блока,5', 'Коментар', '2018-01-03'),
 ('вул.х/з', 'Мат', '2018-01-04'),
 ('вул.Пушкына,там Лєший живе', 'сам в шоці', '2018-05-02');
  -->
+<!--get i post  написати апі який має повернути json  любий-->
+<!-- php classes -->
+<!--<p><b>Стан виконання</b></p>
+<p><input name="stat" type="radio" value="new" checked> У черзі</p>
+<p><input name="stat" type="radio" value="У роботі">У роботі</p>
+<p><input name="stat" type="radio" value="Виконане"> Виконане</p>-->
+
 <!DOCTYPE html>
 <html lang="en">
 
