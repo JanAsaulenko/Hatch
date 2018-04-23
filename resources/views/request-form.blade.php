@@ -27,10 +27,24 @@
                     </form>
                 </div>
 
+                <script>
+                    function initMap() {
+                        let uluru = {lat: -25.363, lng: 131.044};
+                        let map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 4,
+                            center: uluru
+                        });
+                        let  marker = new google.maps.Marker({
+                            position: uluru,
+                            map: map
+                        });
+                    }
+                </script>
                 <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg&callback=initMap">
                 </script>
         </div>
     </div>
+</div>
 </div>
 @endsection
