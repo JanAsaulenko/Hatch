@@ -14,8 +14,8 @@
                 <li class="nav-item {{ (request()->is('request-form') ? 'active' : '') }}">
                     <a class="nav-link" href="{{ url('/request-form') }}">Form</a>
                 </li>
-                <li class="nav-item {{ (request()->is('/view-all') ? 'active' : '') }}">
-                    <a class="nav-link" href="{{ url('/view-all') }}">View all</a>
+                <li class="nav-item {{ (request()->is('/view_all') ? 'active' : '') }}">
+                    <a class="nav-link" href="{{ url('/view_all') }}">View all</a>
                 </li>
             </ul>
         </div>

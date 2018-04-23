@@ -12,6 +12,6 @@ namespace App\Http\Controllers;
 class ViewAllController
 {
 public function show(){
-    return view('view-all');
+    return view('view_all');
 }
 }
