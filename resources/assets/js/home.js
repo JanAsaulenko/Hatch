@@ -6,3 +6,6 @@ const swiper = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev',
     },
 });
+$(function () {
+    $('#datetimepicker1').datetimepicker();
+});
