@@ -9,11 +9,27 @@
 namespace App\Http\Controllers;
 
 
+ use Illuminate\Http\Request;
+
 class RequestFormController
 {
-    public function show()
+    public function index ()
     {
         return view('request-form');
     }
 
+    /**
+     * @param Request $req
+     */
+    function insert(Request $req)
+    {
+        $userName = $req->input('username');
+        $lat = $req->input('lat');
+        $lng = $req->input('lng');
+        $textarea = $req->input('comments');
+
+        $data = array('username'=>$userName,'lat'=>$lat,'lng'=>$lng,'comments'=>$textarea);
+        DB::table('posts')->insert($data);
+     echo 'sucsessfull';
+    }
 }

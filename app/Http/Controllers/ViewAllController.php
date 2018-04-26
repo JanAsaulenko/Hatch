@@ -11,7 +11,7 @@ namespace App\Http\Controllers;
 
 class ViewAllController
 {
-public function show(){
+public function index(){
     return view('view_all');
 }
 }
