@@ -20,6 +20,8 @@ class CreateTasksTable extends Migration
             $table->string("img");
             $table->double('latitude');
             $table->double("longitude");
+
+            $table->boolean('confirmed')->nullable();
             $table->timestamps();
         });
     }

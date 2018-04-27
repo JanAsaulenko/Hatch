@@ -17,9 +17,12 @@ Route::resource('/request-form','RequestFormController')->only([
 'index']);
 //Route::get ('/request-form','RequestFormController@show');
 
-Route::resource('moders','ModeratorFormController')->only([
-        'index','show','edit']
-);
+Route::get('moders', 'ModeratorFormController@index');
+Route::post('moders', 'ModeratorFormController@update');
+
+Route::get('moders/edit', 'ModeratorEditController@edit');
+
+
 Route::resource('complains','ComplainsController')->only([
 'index','show']
 );
