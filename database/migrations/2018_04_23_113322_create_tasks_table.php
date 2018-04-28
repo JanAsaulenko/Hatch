@@ -17,8 +17,15 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->text("comments");
+
+
+
+
+            $table->boolean('confirmed')->nullable();
+
             $table->double('lat');
             $table->double("lng");
+
             $table->timestamps();
         });
     }
