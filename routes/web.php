@@ -20,3 +20,5 @@ Route::resource('/posts','PostController')->only([
 Route::resource('moders','ModeratorFormController')->only([
         'index','show','edit']
 );
+Route::resource('/admin','AdminController')->only([
+    'index']);
