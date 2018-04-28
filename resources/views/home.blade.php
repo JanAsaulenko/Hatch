@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title', 'Home')
-{{dd(Auth::user())}}
+
 @section('content')
     <div class="swiper-container">
         <div class="swiper-wrapper">

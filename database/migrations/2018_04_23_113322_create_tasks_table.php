@@ -18,9 +18,8 @@ class CreateTasksTable extends Migration
             $table->string('username');
             $table->text("comments");
 
-            $table->string("img");
-            $table->double('latitude');
-            $table->double("longitude");
+
+
 
             $table->boolean('confirmed')->nullable();
 
