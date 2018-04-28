@@ -1,16 +1,12 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables/variables";
-
 // vendor libs
 @import '~bootstrap/scss/bootstrap';
 @import "~swiper/dist/css/swiper.css";
 // base styles
 @import './base/base';
-
 // pages
 @import "pages/home";
-@import"pages/request-form";
+@import "pages/post";
