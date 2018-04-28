@@ -26,3 +26,7 @@ Route::resource('complains','ComplainsController')->only([
 
 Route::resource('/view_all','ViewAllController')->only([
     'index']);
+
+Route::resource('/admin','AdminController')->only([
+    'index']);
+
