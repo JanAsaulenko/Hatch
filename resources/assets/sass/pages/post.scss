@@ -4,7 +4,10 @@
   background-color: grey;
   font-size: 12px;
   margin-bottom: 15px;
-
+  border: 1px solid transparent;
+  &.has-error {
+    border-color: #c82333;
+  }
   @media screen and (min-width: 768px) {
     height: 320px;
   }
@@ -48,12 +51,16 @@
     margin: 0 0 20px;
     padding: 10px 15px;
     box-sizing: border-box;
-    font-wieght: 400;
+    font-weight: 400;
     transition: 0.3s ease;
 
     &:focus {
       border: 1px solid #33b5e5;
       color: #333333;
+    }
+
+    &.has-error {
+      border-color: #c82333;
     }
   }
 
