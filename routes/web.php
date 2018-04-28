@@ -17,6 +17,7 @@ Route::resource('/posts','PostController')->only([
 'index','store', 'create']);
 //Route::get ('/request-form','PostController@show');
 
+<<<<<<< HEAD
 
 
 
@@ -35,3 +36,10 @@ Route::resource('/view_all','ViewAllController')->only([
     'index']);
 
 
+=======
+Route::resource('moders','ModeratorFormController')->only([
+        'index','show','edit']
+);
+Route::resource('/admin','AdminController')->only([
+    'index']);
+>>>>>>> 07982e1c858cde033f53b866152f2115a42d002c
