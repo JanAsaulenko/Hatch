@@ -11,7 +11,7 @@
 @section('content')
 
     <div class="container">
-        <h1><small>Скарги</small></h1>
+        <h1><small> Bcі скарги</small></h1>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -20,17 +20,12 @@
                 <th scope="col">Наявність фото </th>
                 <th scope="col">Стан затвердження </th>
                 <th scope="col">
-                    <a href="http://127.0.0.1:8000/moders/edit" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
+                    Редагувати
                 </th>
                 <th scope="col">
-                    <form action="{{ url('complain/1') }}" method="POST">
-                    {{ csrf_field() }}
-                    <!--  {{--{{ method_field('DELETE') }}--}} -->
 
-                        <button type="submit" class="btn btn-success" value="1">
                             Затвердити
-                        </button>
-                    </form>
+
                 </th>
 
             </tr>
@@ -48,14 +43,15 @@
                     <td> {{$complain->img}}</td>
                     <td> {{$complain->confirmed}}</td>
                     <td>
-                        <a href="http://127.0.0.1:8000/moders/edit" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
+                        <a href="{{ url('moders/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
                     </td>
                     <td>
-                        <form action="{{ url('complain/'.$complain->id) }}" method="POST">
+                        <form action="{{ url('moders/'. $complain->id ) }}" method="PUT">
                         {{ csrf_field() }}
-                        <!-- {{--{{ method_field('DELETE') }}--}} -->
 
-                            <button type="submit" class="btn btn-success" value="1">
+                                <input type="hidden" name="complain" value="1">
+                            <input type="hidden" name="id" value="{{$complain->id}}">
+                            <button type="submit" name="confirmed" class="btn btn-success btn-sm" >
                                 Затвердити
                             </button>
                         </form>

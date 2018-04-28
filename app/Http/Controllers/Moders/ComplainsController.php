@@ -6,12 +6,12 @@
  * Time: 23:48
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Moders;
 
 
 use App\Post;
-
-class ModeratorFormController
+use App\Http\Controllers\Controller;
+class ComplainsController
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class ModeratorFormController
     {
         //
         $complains = Post::all();
-        return view('moders.index', compact('complains'));
+        return view('moders\complains\index', compact('complains'));
 
 
     }
@@ -41,66 +41,67 @@ class ModeratorFormController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
-        // dd($id);
-
-        $request->complains()->insert([
-            'approved' => $request->value,
-        ]);
-
-
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function show()
+    public function show($id)
     {
         //
-        return view('moders.show');
+        $complain = Post::find($id);
+
+        return view('moders\complains\show', compact('complain'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function edit()
+    public function edit($id)
     {
-        return view('moders.edit');
+        //
+        $complain = Post::find($id);
+        //return view('moders.complains.edit', compact('complain'));
+        return View('moders\complains\edit', compact('complain'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
-        $request->complains->insert([
-            'approved' => $request->value,
-        ]);
 
-        return redirect('moders');
+        $complain = Post::find($request->id);
+        dd($request);
+        $complain->confirmed = $request->complain;
+
+        $complain->save();
+
+
+
+        return Redirect::to('moders/{id}');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {

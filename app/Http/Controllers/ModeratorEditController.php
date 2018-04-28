@@ -11,7 +11,7 @@ namespace App\Http\Controllers;
 
 class ModeratorEditController
 {
-    public function edit()
+    public function edit($id)
     {
         return view('moders.edit');
     }
