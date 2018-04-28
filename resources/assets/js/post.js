@@ -1,4 +1,13 @@
+import $ from 'jquery';
 import GoogleMaps from 'google-maps';
+import { Modal } from 'bootstrap';
+
+$('.js-show-map-modal').click(function () {
+    const lat = $(this).data('lat');
+    const lng = $(this).data('lng');
+
+    console.log(lat, 'and', lng);
+});
 
 GoogleMaps.KEY = 'AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg';
 
