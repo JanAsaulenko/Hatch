@@ -11,11 +11,11 @@
                 <li class="nav-item {{ (request()->is('/') ? 'active' : '') }}">
                     <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
-                <li class="nav-item {{ (request()->is('request-form') ? 'active' : '') }}">
-                    <a class="nav-link" href="{{ url('/request-form') }}">Form</a>
+                <li class="nav-item {{ (request()->is('posts/create') ? 'active' : '') }}">
+                    <a class="nav-link" href="{{ url('/posts/create') }}">Form</a>
                 </li>
-                <li class="nav-item {{ (request()->is('/view_all') ? 'active' : '') }}">
-                    <a class="nav-link" href="{{ url('/view_all') }}">View all</a>
+                <li class="nav-item {{ (request()->is('posts') ? 'active' : '') }}">
+                    <a class="nav-link" href="{{ url('/posts') }}">View all</a>
                 </li>
             </ul>
         </div>

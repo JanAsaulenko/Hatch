@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComplainsTable extends Migration
+class AddTitleToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateComplainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('complains', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('adress');
-            $table->text('content');
-            $table->timestamps();
+        Schema::table('posts', function($table) {
+            $table->string('title')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateComplainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complains');
+        Schema::table('posts', function($table) {
+            $table->dropColumn('title');
+        });
     }
 }
