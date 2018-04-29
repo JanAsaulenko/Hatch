@@ -22,8 +22,8 @@ class ComplainsController
     {
         //
         $complains = Post::all();
-        return view('moders\complains\index', compact('complains'));
 
+        return view('moders.complains.index')->with('complains', $complains);
 
     }
 
@@ -59,7 +59,7 @@ class ComplainsController
         //
         $complain = Post::find($id);
 
-        return view('moders\complains\show', compact('complain'));
+        return view('moders.complains.show', compact('complain'));
     }
 
     /**
@@ -72,8 +72,8 @@ class ComplainsController
     {
         //
         $complain = Post::find($id);
-        //return view('moders.complains.edit', compact('complain'));
-        return View('moders\complains\edit', compact('complain'));
+
+        return View('moders.complains.edit', compact('complain'));
     }
 
     /**
@@ -94,7 +94,7 @@ class ComplainsController
 
 
 
-        return Redirect::to('moders/{id}');
+        return Redirect::to('moders/complains/{id}');
     }
 
     /**

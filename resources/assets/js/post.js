@@ -28,9 +28,7 @@ GoogleMaps.load((google) => {
 
     let marker;
 
-    if( cords) {
-        google.maps.Marker
-    }
+
     // Create new marker on double click event on the map
     google.maps.event.addListener(map, 'click', function (event) {
         !!marker && marker.setMap(null); //remove marker if marker is true (!! operators)
