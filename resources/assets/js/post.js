@@ -28,9 +28,6 @@ GoogleMaps.load((google) => {
 
     let marker;
 
-    if( cords) {
-        google.maps.Marker
-    }
     // Create new marker on double click event on the map
     google.maps.event.addListener(map, 'click', function (event) {
         !!marker && marker.setMap(null); //remove marker if marker is true (!! operators)
@@ -49,6 +46,6 @@ GoogleMaps.load((google) => {
     });
 });
 
-
-
+$('div.alert').delay(3000).slideUp(500);
+$('div.alert-danger').delay(3000).slideToggle(500);
 
