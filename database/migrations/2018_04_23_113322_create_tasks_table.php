@@ -15,11 +15,10 @@ class CreateTasksTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("address");
+            $table->string('username');
             $table->text("comments");
-            $table->string("img");
-            $table->double('latitude');
-            $table->double("longitude");
+            $table->double('lat');
+            $table->double("lng");
             $table->timestamps();
         });
     }
