@@ -34,6 +34,8 @@ namespace App\Http\Controllers;
     {
         $validated = $req->validated();
         $post->create($req->all());
+        \Session::flash('Sucsess','Office successfully added.');
         return  redirect('/posts/create');
+
     }
 }

@@ -14,8 +14,13 @@
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
+<<<<<<< HEAD
     'index','store', 'create']);
 //Route::get ('/request-form','PostController@show');
+=======
+'index','store', 'create']);
+
+>>>>>>> 9b8dd90c23a834ed030f13b448a4ef6bebe1eeca
 
 
 
