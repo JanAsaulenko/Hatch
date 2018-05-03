@@ -14,7 +14,7 @@ class AddTitleToPosts extends Migration
     public function up()
     {
         Schema::table('posts', function($table) {
-            $table->string('title')->nullable();
+            $table->string('tittle')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddTitleToPosts extends Migration
     public function down()
     {
         Schema::table('posts', function($table) {
-            $table->dropColumn('title');
+            $table->dropColumn('tittle');
         });
     }
 }
