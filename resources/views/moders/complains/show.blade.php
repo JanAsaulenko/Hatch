@@ -15,16 +15,11 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th scope="col">Адреса</th>
+                <th scope="col">Заголовок скарги</th>
                 <th scope="col">Текст скарги</th>
-                <th scope="col">Наявність фото </th>
-                <th scope="col">Стан затвердження </th>
+                <th scope="col">Ім'я скаржника </th>
+                <th scope="col">Затверджено </th>
                 <th scope="col">
-
-                </th>
-                <th scope="col">
-
-
 
                 </th>
 
@@ -35,18 +30,15 @@
 
                 <tr>
                     <td>
-                        <div>{{$complain->address}}</div>
+                        <div>{{$complain->title}}</div>
                     </td>
                     <td>
                         <div>{{$complain->comments}}</div>
                     </td>
-                    <td> {{$complain->img}}</td>
+                    <td> {{$complain->username}}</td>
                     <td> {{$complain->confirmed}}</td>
                     <td>
-
-                    </td>
-                    <td>
-
+                        <a href="{{ url('moders/complains/' ) }}" type="link" class="btn btn-outline-success btn-sm" >До списку скарг</a>
                     </td>
 
                 </tr>

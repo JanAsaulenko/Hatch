@@ -21,7 +21,7 @@ class ComplainsController
     public function index()
     {
         //
-        $complains = Post::all();
+        $complains = Post::paginate(5);
 
         return view('moders.complains.index')->with('complains', $complains);
 
@@ -58,8 +58,8 @@ class ComplainsController
     {
         //
         $complain = Post::find($id);
-
-        return view('moders.complains.show', compact('complain'));
+        return view('moders.complains.show')->with('complain', $complain);
+        //return view('moders.complains.show', compact('complain'));
     }
 
     /**
@@ -82,19 +82,19 @@ class ComplainsController
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request)
+    public function update($id)
     {
         //
 
-        $complain = Post::find($request->id);
-        dd($request);
-        $complain->confirmed = $request->complain;
+        $complain = Post::find($id);
+        //dd($request);
+        $complain->confirmed = 1;
 
         $complain->save();
 
 
 
-        return Redirect::to('moders/complains/{id}');
+        return redirect('moders/complains');
     }
 
     /**

@@ -18,7 +18,7 @@
                 <th scope="col">Заголовок скарги</th>
                 <th scope="col">Текст скарги</th>
                 <th scope="col">Ім'я скаржника </th>
-                <th scope="col">Стан затвердження </th>
+                <th scope="col">Затверджено </th>
                 <th scope="col">
                     Редагувати
                 </th>
@@ -46,21 +46,20 @@
                         <a href="{{ url('moders/complains/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
                     </td>
                     <td>
-                        <form action="{{ url('moders/complains/'. $complain->id ) }}" method="PUT">
-                        {{ csrf_field() }}
+                        {{ Form::open(array('url' => 'moders/complains/' . $complain->id, 'class' => 'btn btn-small')) }}
+                        {{ Form::hidden('_method', 'PUT') }}
+                        {{ Form::submit('Confirm', array('class' => 'btn btn-success btn-sm')) }}
+                        {{ Form::close() }}
 
-                                <input type="hidden" name="complain" value="1">
-                            <input type="hidden" name="id" value="{{$complain->id}}">
-                            <button type="submit" name="confirmed" class="btn btn-success btn-sm" >
-                                Затвердити
-                            </button>
-                        </form>
+
                     </td>
 
                 </tr>
             @endforeach
             </tbody>
         </table>
+        {{ $complains->links( "pagination::bootstrap-4") }}
+
 
     </div>
 
