@@ -6,7 +6,7 @@
 <html lang="en">
 
 
-@section('title', 'Form');
+@section('tittle', 'Form');
 
 @section('content')
 
@@ -35,7 +35,7 @@
 
                 <tr>
                     <td>
-                        <div>{{$complain->title}}</div>
+                        <div>{{$complain->tittle}}</div>
                     </td>
                     <td>
                         <div>{{$complain->comments}}</div>

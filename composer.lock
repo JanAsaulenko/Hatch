@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bc61cab2b3b0883ffed3504aa1e6792",
+    "content-hash": "0fb31b9a7cc7396777de04e5fe4b84ee",
     "packages": [
         {
             "name": "alexpechkarev/geometry-library",
@@ -2828,7 +2828,7 @@
             ],
             "authors": [
                 {
-                    "name": "Pádraic Brady",
+                    "name": "Padraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 },
