@@ -10,7 +10,10 @@ namespace App\Http\Controllers\Moders;
 
 
 use App\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
+
 class ComplainsController
 {
     /**
@@ -58,8 +61,8 @@ class ComplainsController
     {
         //
         $complain = Post::find($id);
-        return view('moders.complains.show')->with('complain', $complain);
-        //return view('moders.complains.show', compact('complain'));
+
+        return view('moders.complains.show', compact('complain'));
     }
 
     /**
@@ -82,17 +85,15 @@ class ComplainsController
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        //
+        Post::find($id)->update($request->all());
 
         $complain = Post::find($id);
         //dd($request);
         $complain->confirmed = 1;
 
         $complain->save();
-
-
 
         return redirect('moders/complains');
     }
