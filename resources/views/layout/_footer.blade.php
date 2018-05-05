@@ -3,64 +3,15 @@
     <hr>
     <!--Footer Links-->
     <div class="container mt-5 mb-4 text-center text-md-left">
-        <div class="row mt-3">
-
-            <!--First column-->
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Company name</strong>
-                </h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Team of Baks.</p>
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Products</strong>
-                </h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">Hatch</a>
-                </p>
-                <p>
-                    <a href="#!">second</a>
-                </p>
-                <p>
-                    <a href="#!">third</a>
-                </p>
-                <p>
-                    <a href="#!">forth</a>
-                </p>
-            </div>
-            <!--/.Second column-->
-
-            <!--Third column-->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Useful links</strong>
-                </h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">Your City</a>
-                </p>
-                <p>
-                    <a href="#!">Chat</a>
-                </p>
-                <p>
-                    <a href="#!">Help</a>
-                </p>
-
-            </div>
-            <!--/.Third column-->
+        <div class="row ">
 
             <!--Fourth column-->
-            <div class="col-md-4 col-lg-3 col-xl-3">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Contact</strong>
+            <div class="col-md col-lg col-xl">
+                <h6 class="text-uppercase font-weight-bold" style="align-content: center">
+                    <strong style="align-self: center">Contact</strong>
                 </h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                {{--<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">--}}
+               <div class="row" style="align-content: center">
                 <p>
                     <i class="fa fa-home mr-3"></i> Vinnitsia</p>
                 <p>
@@ -70,8 +21,8 @@
                 <p>
                     <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
             </div>
-            <!--/.Fourth column-->
 
+            </div>
         </div>
     </div>
     <!--/.Footer Links-->
