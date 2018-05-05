@@ -23,11 +23,9 @@
                     Редагувати
                 </th>
                 <th scope="col">
-
                             Затвердити
-
                 </th>
-
+                <th scope="col"> </th>
             </tr>
             </thead>
             <tbody>
@@ -43,17 +41,26 @@
                     <td> {{$complain->username}}</td>
                     <td> {{$complain->confirmed}}</td>
                     <td>
-                        <a href="{{ url('moders/complains/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
+                        <a href="{{ url('moders/complains/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >
+
+                            <img src='images/moders/edit.png'></a>
+
+                        </a>
+                    </td>
+                    <td>
+                        {{ Form::open(array('url' => 'moders/complains/', 'method' => 'POST')) }}
+
+                        {{ Form::checkbox('confirmed') }}
+
+                        {{ Form::close() }}
+
                     </td>
                     <td>
                         {{ Form::open(array('url' => 'moders/complains/' . $complain->id, 'class' => 'btn btn-small')) }}
                         {{ Form::hidden('_method', 'PUT') }}
-                        {{ Form::submit('Confirm', array('class' => 'btn btn-success btn-sm')) }}
+                        {{ Form::submit('Затвердити', array('class' => 'btn btn-success btn-sm')) }}
                         {{ Form::close() }}
-
-
                     </td>
-
                 </tr>
             @endforeach
             </tbody>
