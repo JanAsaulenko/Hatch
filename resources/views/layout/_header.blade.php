@@ -10,13 +10,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item {{ (request()->is('/') ? 'active' : '') }}">
-          <a class="nav-link" href="{{ url('/') }}"><h3>Home</h3></a>
         </li>
         <li class="nav-item {{ (request()->is('posts/create') ? 'active' : '') }}">
-          <a class="nav-link" href="{{ url('/posts/create') }}"><h3>Form</h3></a>
+          <a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>
         </li>
         <li class="nav-item {{ (request()->is('posts') ? 'active' : '') }}">
-          <a class="nav-link" href="{{ url('/posts') }}"><h3>View all</h3></a>
+          <a class="nav-link" href="{{ url('/posts') }}"><h6><b>ПОКАЗАТИ ВС1</b></h6></a>
         </li>
       </ul>
     </div>

@@ -21,12 +21,13 @@
           {{ Form::hidden('lat', null, ['id' => 'lat']) }}
           {{ Form::hidden('lng', null, ['id' => 'lng']) }}
           <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
               <div id="map" class="{{ $errors->has('map') ? 'has-error' : '' }}"></div>
             </div>
 
 
-            <div class="col-md-3">
+            <div class="col-md-4">
+              {{--{{Form::photo('photo','Photo' [class =>])}}--}}
               {{ Form::label('title', 'Title', ['class' => 'control-label']) }}
               {{ Form::text('title', null, [
                   'class' => $errors->has('title') ? 'has-error' : '',

@@ -11,7 +11,7 @@ GoogleMaps.load((google) => {
         center: vinnytsia,
         zoom: 16,
     });
-    // let infoWindow = new google.maps.InfoWindow({map: map});
+    let infoWindow = new google.maps.InfoWindow({map: map});
     let geoloc = function () {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -19,6 +19,7 @@ GoogleMaps.load((google) => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+                console.log(pos);
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 map.setCenter(pos);
@@ -27,13 +28,3 @@ GoogleMaps.load((google) => {
     };
     document.getElementById("geo").addEventListener("click", geoloc);
 });
-
-
-
-
-
-
-
-
-
-
