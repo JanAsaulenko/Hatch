@@ -13,6 +13,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
+
 class ComplainsController
 {
     /**
@@ -72,8 +73,8 @@ class ComplainsController
     {
         //
         $complain = Post::find($id);
-        return view('moders.complains.show')->with('complain', $complain);
-        //return view('moders.complains.show', compact('complain'));
+
+        return view('moders.complains.show', compact('complain'));
     }
 
     /**
@@ -101,12 +102,12 @@ class ComplainsController
         Post::find($id)->update($request->all());
 
         $complain = Post::find($id);
-        //dd($request);
+
         $complain->confirmed = 1;
 
         $complain->save();
 
-
+        //\Session::flash('Sucsess','Скарга збережена.');
 
         return redirect('moders/complains');
     }
@@ -120,5 +121,8 @@ class ComplainsController
     public function destroy($id)
     {
         //
+        Post::find($id)->delete();
+        return redirect('moders/complains')
+            ->with('success','Complain deleted successfully');
     }
 }

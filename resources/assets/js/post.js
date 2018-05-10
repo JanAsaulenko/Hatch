@@ -1,15 +1,37 @@
 import $ from 'jquery';
+import Swiper from 'swiper';
 import GoogleMaps from 'google-maps';
 import { Modal } from 'bootstrap';
+
+
+// const galleryTop = new Swiper('.gallery-top', {
+//     spaceBetween: 10,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//     },
+// });
+// const galleryThumbs = new Swiper('.gallery-thumbs', {
+//     spaceBetween: 10,
+//     centeredSlides: true,
+//     slidesPerView: 'auto',
+//     touchRatio: 0.2,
+//     slideToClickedSlide: true,
+// });
+// galleryTop.forEach((el, key) => {
+//     galleryTop[key].controller.control = galleryThumbs[key];
+//     galleryThumbs[key].controller.control = galleryTop[key];
+// });
 
 $('.js-show-map-modal').click(function () {
     const lat = $(this).data('lat');
     const lng = $(this).data('lng');
-
+    const lngNode = document.getElementById('lng');
+    const latNode = document.getElementById('lat');
     console.log(lat, 'and', lng);
 });
 
-GoogleMaps.KEY = 'AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg';
+// GoogleMaps.KEY = 'AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg';
 
 GoogleMaps.load((google) => {
     const mapNode = document.getElementById('map');
@@ -18,7 +40,6 @@ GoogleMaps.load((google) => {
     const latNode = document.getElementById('lat');
     const latitude = 49.234741;
     const longitude = 28.472035;
-
     const myLatLng = {lat: latitude, lng: longitude};
 
     const map = new google.maps.Map(mapNode, {
@@ -47,6 +68,8 @@ GoogleMaps.load((google) => {
     });
 });
 
-$('div.alert').delay(3000).slideUp(500);
-$('div.alert-danger').delay(3000).slideToggle(500);
 
+$('div.alert-success').delay(3000).slideUp(500);
+$('div.alert-danger').delay(3000).slideUp(500);
+
+// Try to resolve this class wich stands below

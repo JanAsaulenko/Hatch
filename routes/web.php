@@ -23,9 +23,16 @@ Route::resource('/posts','PostController')->only([
 
 
 
-    Route::resource('/moders/complains', 'Moders\ComplainsController')->only([
-        'index','edit','update','show'
-    ]);
+Route::get ('/request-form','PostController@show');
+
+
+
+
+
+
+Route::resource('/moders/complains', 'Moders\ComplainsController')->only([
+    'index','edit','update','show','destroy'
+]);
 
 
 
@@ -39,4 +46,17 @@ Route::resource('/posts','PostController')->only([
 
 Route::resource('/admin','AdminController')->only([
     'index']);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
