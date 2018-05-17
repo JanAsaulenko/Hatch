@@ -106,6 +106,8 @@ class ComplainsController
      */
     public function destroy($id)
     {
-        //
+        Post::find($id)->delete();
+        return redirect('moders/complains')
+            ->with('success','Complain deleted successfully');
     }
 }

@@ -8,57 +8,103 @@
 
 @section('title', 'Form');
 
+
+
 @section('content')
 
-    <div class="container">
-        <h1><small> Bcі скарги</small></h1>
-        <table class="table table-hover">
-            <thead>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" > </h4>
+                </div>
+                <div class="modal-body">
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <h1><small> Bcі скарги</small></h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Заголовок скарги</th>
+            <th scope="col">Текст скарги</th>
+            <th scope="col">Ім'я скаржника </th>
+            <th scope="col"> </th>
+            <th scope="col">                </th>
+            <th scope="col">                </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($complains as $complain)
+
             <tr>
-                <th scope="col">Заголовок скарги</th>
-                <th scope="col">Текст скарги</th>
-                <th scope="col">Ім'я скаржника </th>
-                <th scope="col">Затверджено </th>
-                <th scope="col">
-                    Редагувати
-                </th>
-                <th scope="col">
+                <td>
+                    <div>{{$complain->title}}</div>
+                </td>
+                <td>
+                    <div>{{$complain->comments}}</div>
+                </td>
+                <td>
+                    <div>{{$complain->username}}</div>
+                </td>
+                <td>
+                    <form action="{{ url('moders/complains/'. $complain->id ) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{method_field('PUT')}}
 
-                            Затвердити
+                        <button type="submit" name="confirmed" class="btn btn-outline-success btn-sm" >
+                            <i class="far fa-save"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <a href="{{ url('moders/complains/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >
+                        <i class="far fa-edit"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url('moders/complains/' . $complain->id ) }}" type="link" class="btn btn-outline-success btn-sm" >
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </td>
+                <td>
 
-                </th>
-
+                    <form action="{{url('moders/complains/' . $complain->id)}}" method="POST">
+                        {{csrf_field()}}
+                        {{method_field('DELETE')}}
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm modal-show" data-toggle="modal" data-target="#myModal" data-title="Зображення до скарги {{$complain->id}}"
+                            data-content="<img class='img-responsive center-block' src='images/post/body_bg.jpg'>">
+                        <i class="far fa-image"></i>
+                    </button>
+                </td>
             </tr>
-            </thead>
-            <tbody>
-            @foreach($complains as $complain)
-
-                <tr>
-                    <td>
-                        <div>{{$complain->title}}</div>
-                    </td>
-                    <td>
-                        <div>{{$complain->comments}}</div>
-                    </td>
-                    <td> {{$complain->username}}</td>
-                    <td> {{$complain->confirmed}}</td>
-                    <td>
-                        <a href="{{ url('moders/complains/' . $complain->id . '/edit') }}" type="link" class="btn btn-outline-success btn-sm" >Редагувати</a>
-                    </td>
-                    <td>
-                        {{ Form::open(array('url' => 'moders/complains/' . $complain->id, 'class' => 'btn btn-small')) }}
-                        {{ Form::hidden('_method', 'PUT') }}
-                        {{ Form::submit('Confirm', array('class' => 'btn btn-success btn-sm')) }}
-                        {{ Form::close() }}
-
-
-                    </td>
-
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        {{ $complains->links( "pagination::bootstrap-4") }}
+        @endforeach
+        </tbody>
+    </table>
+    {{ $complains->links( "pagination::bootstrap-4") }}
 
 
     </div>
