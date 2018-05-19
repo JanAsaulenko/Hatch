@@ -17,22 +17,21 @@
 
         #myImg:hover {opacity: 0.7;}
 
-        /* The Modal (background) */
+
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
         }
 
-        /* Modal Content (image) */
         .modal-content {
             margin: auto;
             display: block;
@@ -40,7 +39,6 @@
             max-width: 700px;
         }
 
-        /* Caption of Modal Image */
         #caption {
             margin: auto;
             display: block;
@@ -52,7 +50,6 @@
             height: 150px;
         }
 
-        /* Add Animation */
         .modal-content, #caption {
             -webkit-animation-name: zoom;
             -webkit-animation-duration: 0.6s;
@@ -70,8 +67,7 @@
             to {transform:scale(1)}
         }
 
-        /* The Close Button */
-        .close {
+        .closed {
             position: absolute;
             top: 15px;
             right: 35px;
@@ -81,14 +77,14 @@
             transition: 0.3s;
         }
 
-        .close:hover,
-        .close:focus {
+        .closed:hover,
+        .closed:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
         }
 
-        /* 100% Image Width on Smaller Screens */
+
         @media only screen and (max-width: 700px){
             .modal-content {
                 width: 100%;
@@ -123,7 +119,11 @@
             ]) }}
         </div>
         <div class="col-md-4" class="form-group">
-
+            {{ Form::label('#', "Перелік прикріплених фото", ['class' => 'control-label']) }}
+            {{--@foreach($fotos as $key => $foto)--}}
+                {{--<option value="{{ $key }} "> {{ $foto }} </option>--}}
+            {{--@endforeach--}}
+            {{--{{ Form::select('foto', $foto ) }}--}}
         </div>
         <div class="col-md-2" class="form-group">
 
@@ -150,7 +150,7 @@
             {{--</a>--}}
         </div>
         <div id="myModal" class="modal">
-            <span class="close">&times;</span>
+            <span class="closed">&times;</span>
             <img class="modal-content" id="img01">
             <div id="caption"></div>
         </div>
@@ -170,7 +170,7 @@
             }
 
 
-            var span = document.getElementsByClassName("close")[0];
+            var span = document.getElementsByClassName("closed")[0];
 
 
             span.onclick = function() {

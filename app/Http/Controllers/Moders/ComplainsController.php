@@ -13,6 +13,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\ModersMiddleware;
 
 class ComplainsController
 {
@@ -24,6 +25,7 @@ class ComplainsController
     public function index()
     {
         //
+
         $complains = Post::paginate(5);
 
         return view('moders.complains.index')->with('complains', $complains);
@@ -74,6 +76,7 @@ class ComplainsController
     public function edit($id)
     {
         //
+
         $complain = Post::find($id);
 
         return View('moders.complains.edit', compact('complain'));
@@ -87,17 +90,11 @@ class ComplainsController
      */
     public function update(Request $request, $id)
     {
-        Post::find($id)->update($request->all());
-
         $complain = Post::find($id);
-        //dd($request);
         $complain->confirmed = 1;
-
-        $complain->save();
-
+        $complain->update($request->all());
         return redirect('moders/complains');
     }
-
     /**
      * Remove the specified resource from storage.
      *
