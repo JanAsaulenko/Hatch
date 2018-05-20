@@ -15,7 +15,7 @@ class ModersMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $x=1;
+        $x=12;
         if ($x==1) {
             return redirect('posts');
         }
