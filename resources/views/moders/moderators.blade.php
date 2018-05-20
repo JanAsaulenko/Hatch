@@ -72,7 +72,7 @@ VALUES ('вул.Блока,5', 'Коментар', '2018-01-03'),
     <!-- Project One -->
     <div class="row">
         <div class="col-md-5">
-            <a href="#">
+            <a href="">
                 <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
             </a>
         </div>

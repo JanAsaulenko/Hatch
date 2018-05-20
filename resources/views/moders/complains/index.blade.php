@@ -105,8 +105,6 @@
             </tbody>
         </table>
         {{ $complains->links( "pagination::bootstrap-4") }}
-
-
     </div>
 
 
