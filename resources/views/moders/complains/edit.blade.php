@@ -50,7 +50,9 @@
 
         {{ Form::close() }}
 
-
+        {!! Form::open(['method' => 'DELETE','route' => ['complains.destroy', $complain->id],'style'=>'display:inline']) !!}
+        {!! Form::submit('Видалити', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
 
     </div>
 

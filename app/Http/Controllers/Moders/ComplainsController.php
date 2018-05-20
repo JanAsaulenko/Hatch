@@ -24,7 +24,10 @@ class ComplainsController
     public function index()
     {
         //
-        $complains = Post::paginate(5);
+        $complains = Post::where('confirmed', NULL)
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+
 
         return view('moders.complains.index')->with('complains', $complains);
 
@@ -46,9 +49,18 @@ class ComplainsController
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
         //
+        $complain = Post::find($id);
+        //dd($request);
+        $complain->confirmed = $request->confirmed;
+
+        $complain->save();
+
+
+
+        return redirect('moders/complains/');
     }
 
     /**
@@ -90,10 +102,12 @@ class ComplainsController
         Post::find($id)->update($request->all());
 
         $complain = Post::find($id);
-        //dd($request);
+
         $complain->confirmed = 1;
 
         $complain->save();
+
+        //\Session::flash('Sucsess','Скарга збережена.');
 
         return redirect('moders/complains');
     }
@@ -107,5 +121,8 @@ class ComplainsController
     public function destroy($id)
     {
         //
+        Post::find($id)->delete();
+        return redirect('moders/complains')
+            ->with('success','Complain deleted successfully');
     }
 }
