@@ -26,7 +26,9 @@ class ComplainsController
     {
         //
 
-        $complains = Post::paginate(5);
+        $complains = Post::where('confirmed', NULL)
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
 
         return view('moders.complains.index')->with('complains', $complains);
 
@@ -48,9 +50,18 @@ class ComplainsController
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
         //
+        $complain = Post::find($id);
+        //dd($request);
+        $complain->confirmed = $request->confirmed;
+
+        $complain->save();
+
+
+
+        return redirect('moders/complains/');
     }
 
     /**

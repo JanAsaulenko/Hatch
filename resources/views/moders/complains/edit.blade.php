@@ -169,8 +169,10 @@
                 captionText.innerHTML = this.alt;
             }
 
+        {!! Form::open(['method' => 'DELETE','route' => ['complains.destroy', $complain->id],'style'=>'display:inline']) !!}
+        {!! Form::submit('Видалити', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
 
-            var span = document.getElementsByClassName("closed")[0];
 
 
             span.onclick = function() {

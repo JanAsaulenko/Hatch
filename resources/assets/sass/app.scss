@@ -1,5 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "~font-awesome/scss/font-awesome.scss";
 // Variables
 @import "variables/variables";
 // vendor libs
@@ -10,4 +11,9 @@
 // pages
 @import "pages/home";
 @import "pages/post";
+
+
+@import "moders/moders";
+
 @import "pages/index/card";
+
