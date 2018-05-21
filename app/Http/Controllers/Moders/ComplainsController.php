@@ -12,6 +12,9 @@ namespace App\Http\Controllers\Moders;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+
+use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Controllers\Controller;
 
 class ComplainsController
@@ -21,12 +24,15 @@ class ComplainsController
      *
      * @return \Illuminate\Http\Response
      */
+
+    const PER_PAGE = 5;
     public function index()
     {
         //
+
         $complains = Post::where('confirmed', NULL)
             ->orderBy('created_at', 'desc')
-            ->paginate(5);
+            ->paginate(self::PER_PAGE  );
 
 
         return view('moders.complains.index')->with('complains', $complains);
@@ -42,6 +48,8 @@ class ComplainsController
     public function create()
     {
         //
+        return view('moders.complains.create');
+
     }
 
     /**
@@ -51,16 +59,34 @@ class ComplainsController
      */
     public function store(Request $request)
     {
-        //
-        $complain = Post::find($id);
-        //dd($request);
-        $complain->confirmed = $request->confirmed;
 
-        $complain->save();
+        if($request->isMethod('POST')){
+
+            if($request->hasFile('img')) {
+                $file = $request->file('img');
+                $filename = str_random(20) .'.' . $file->getClientOriginalExtension() ?: 'jpg';
+
+                $file->move(public_path() . '/upload/complain/'.$request->id,$filename);
+
+               /* $image = Image::make('/upload/complain/'.$request->id.'/' .$file);
+                $image->resize(200,200);
+                $image->save('/upload/complain/'.$request->id.'/'.$filename);*/
+
+                /*$image_resize = Image::make($file->getRealPath());
+                $image_resize->resize(200, 200);
+                $image_resize->save(public_path() . '/upload/complain/'.$request->id,$filename);*/
+
+
+                $complain = Post::find($request->id);
+                $complain->img = $filename;
+                $complain->save();
+            }
+        }
 
 
 
         return redirect('moders/complains/');
+
     }
 
     /**
@@ -99,15 +125,13 @@ class ComplainsController
      */
     public function update(Request $request, $id)
     {
-        Post::find($id)->update($request->all());
+
 
         $complain = Post::find($id);
 
         $complain->confirmed = 1;
+        $complain->update($request->all());
 
-        $complain->save();
-
-        //\Session::flash('Sucsess','Скарга збережена.');
 
         return redirect('moders/complains');
     }
