@@ -12,33 +12,20 @@
 
 @section('content')
 
-    <!-- Модальное окно -->
-    <div class="modal fade" id="myModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-                    <h4 class="modal-title" id="title"></h4>
-                </div>
-                <div class="modal-body">
-                    <p id="content"  ></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Main content -->
-        <h1><small> Bcі останні скарги</small></h1>
+
+         <a href="{{ url('moders/complains/' ) }}" type="link" class="btn btn-outline-success btn-sm" >До списку всіх скарг</a>
+        <a href="?confirmed=1" type="link" class="btn btn-outline-success btn-sm" >До списку незатверджених скарг</a>
         <table class="table table-hover">
             <thead>
             <tr>
                 <th scope="col" class="tbtxt">Заголовок скарги</th>
                 <th scope="col" class="tbtxt">Текст скарги</th>
                 <th scope="col" class="tbtxt">Ім'я скаржника </th>
-                <th scope="col" class="tbtxt">Зображення </th>
+                <th scope="col" class="tbtxt">Стан затвердження </th>
+                <th scope="col" class="tbtxt">Наявність фото </th>
                 <th scope="col" class="tbtxt"> </th>
                 <th scope="col" class="tbtxt"> </th>
                 <th scope="col" class="tbtxt"> </th>
@@ -60,12 +47,11 @@
                         <div>{{$complain->username}}</div>
                     </td>
                     <td class="tdtxt">
-                        <button type="button" class="btn btn-warning btn-sm " id="myM" data-toggle="modal" data-target="#myModal"
-                                data-title="Скарга {{$complain->id}} : {{$complain->title}}"
-                                data-content='<img src="/upload/complain/{{$complain->id}}/{{$complain->img}}"
-                                 alt="Complaint {{$complain->id}} img" >' >
-                            <i class="far fa-image"></i>
-                        </button>
+
+                        <div>{{($complain->confirmed == 1) ? "Затверджена" : "НE затверджена!" }}</div>
+                    </td>
+                    <td scope="col" class="tdtxt" >
+                        <div >{{($complain->img) ? "Фото присутнє" : "Фото відсутнє"}}</div>
                     </td>
                     <td class="tdtxt">
                         <form action="{{ url('moders/complains/'. $complain->id ) }}" method="POST">
@@ -103,8 +89,6 @@
             </tbody>
         </table>
         {{ $complains->links( "pagination::bootstrap-4") }}
-
-
     </div>
 
 

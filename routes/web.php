@@ -23,6 +23,7 @@ Route::resource('/posts','PostController')->only([
 
 
 
+
 Route::get ('/request-form','PostController@show');
 
 
@@ -30,7 +31,9 @@ Route::get ('/request-form','PostController@show');
 
 
 
-Route::resource('/moders/complains', 'Moders\ComplainsController');
+
+    Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
+
 
 
 

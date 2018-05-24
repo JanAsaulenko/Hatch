@@ -20,7 +20,7 @@ const galleryThumbs = new Swiper('.gallery-thumbs', {
         reverseDirection: false
     },
 });
-/*galleryTop.forEach((el, key) => {
+galleryTop.forEach((el, key) => {
     galleryTop[key].controller.control = galleryThumbs[key];
     galleryThumbs[key].controller.control = galleryTop[key];
-});*/
+});
