@@ -96,7 +96,7 @@
 
     <h1>Сторінка редагування скарга № {{ $complain->id }}</h1>
 
-    {{ Form::open(array('url' => 'moders/complains/'. $complain->id, 'method' => 'PUT')) }}
+    {{ Form::open(array('url' => 'moders/complains/'. $complain->id, 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
 
     <div class="row">
 
@@ -126,11 +126,15 @@
             {{--{{ Form::select('foto', $foto ) }}--}}
         </div>
         <div class="col-md-2" class="form-group">
+            {{ Form::label('image', "Дадати/змінити фото скарги", ['class' => 'control-label']) }}
+            {{ Form::file('image', array('class' => 'image')) }}
+
 
             {{ Form::submit('Зберегти', array('class' => 'btn btn-success btn btn-block')) }}
 
 
             <a href="{{ url('moders/complains/' ) }}" type="link" class="btn btn-primary btn-block" >До списку скарг</a>
+
 
         </div>
 
@@ -145,8 +149,8 @@
             ]) }}
         </div>
         <div class="col-md-5">
-            {{--<a href="/images/body_bg.jpg">--}}
-            <img id="myImg" class="img-fluid rounded mb-3 mb-md-0" src="/images/body_bg.jpg" alt="Фото комплейна">
+            {{--<a href="{{$complain->img}}">--}}
+            <img id="myImg" class="img-fluid rounded mb-3 mb-md-0" src="{{$complain->img}}" alt="Фото відсутнє" width="399" height="299">
             {{--</a>--}}
         </div>
         <div id="myModal" class="modal">
