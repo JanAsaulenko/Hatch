@@ -100,55 +100,64 @@
 
     <div class="row">
 
-        <div class="col-md-2" class="form-group">
+        <div class="col-md-4 form-group">
             {{ Form::label('created_at', "Дата створення", ['class' => 'control-label']) }}
             {{ Form::date('created_at', $complain->created_at, [
                 'class' => $errors->has('created_at') ? 'has-error' : "",
             ]) }}
-        </div>
-        <div class="col-md-2" class="form-group">
             {{ Form::label('title', "Заголовок скарги", ['class' => 'control-label']) }}
             {{ Form::text('title', $complain->title, [
                 'class' => $errors->has('title') ? 'has-error' : "",
             ]) }}
-        </div>
-        <div class="col-md-2" class="form-group">
-            {{ Form::label('username', "Ім'я користувача", ['class' => 'control-label']) }}
+            {{ Form::label('username', "Ім'я  користувача", ['class' => 'control-label']) }}
             {{ Form::text('username', $complain->username, [
                 'class' => $errors->has('username') ? 'has-error' : "",
             ]) }}
+            {{ Form::label('comments', "Текст скарги", ['class' => 'control-label']) }}
+            {{ Form::textarea('comments', $complain->comments, [
+                'row' => '7', 'class' => 'form-control'
+            ]) }}
         </div>
-        <div class="col-md-4" class="form-group">
-            {{ Form::label('#', "Перелік прикріплених фото", ['class' => 'control-label']) }}
+        <div class="col-md-6 form-group">
+            <img id="myImg" class="img-fluid rounded mb-3 mb-md-0" src="/images/body_bg.jpg" alt="Фото комплейна">
+        </div>
+        {{--<div class="col-md-2" class="form-group">--}}
+
+        {{--</div>--}}
+        {{--<div class="col-md-4" class="form-group">--}}
+            {{--{{ Form::label('#', "Перелік прикріплених фото", ['class' => 'control-label']) }}--}}
             {{--@foreach($fotos as $key => $foto)--}}
                 {{--<option value="{{ $key }} "> {{ $foto }} </option>--}}
             {{--@endforeach--}}
             {{--{{ Form::select('foto', $foto ) }}--}}
-        </div>
+        {{--</div>--}}
         <div class="col-md-2" class="form-group">
 
             {{ Form::submit('Зберегти', array('class' => 'btn btn-success btn btn-block')) }}
 
 
             <a href="{{ url('moders/complains/' ) }}" type="link" class="btn btn-primary btn-block" >До списку скарг</a>
+            {{ Form::close() }}
 
+
+
+            {!! Form::open(['method' => 'DELETE','route' => ['complains.destroy', $complain->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Видалити', ['class' => 'btn btn-danger btn-block']) !!}
+            {!! Form::close() !!}
         </div>
 
     </div>
 
 
-    <div class="row">
-        <div class="col-md-5" class="form-group">
-            {{ Form::label('comments', "Текст скарги", ['class' => 'control-label']) }}
-            {{ Form::textarea('comments', $complain->comments, [
-                'row' => '5', 'class' => 'form-control'
-            ]) }}
-        </div>
-        <div class="col-md-5">
+    {{--<div class="row">--}}
+        {{--<div class="col-md-5 form-group">--}}
+
+        {{--</div>--}}
+        {{--<div class="col-md-5">--}}
             {{--<a href="/images/body_bg.jpg">--}}
-            <img id="myImg" class="img-fluid rounded mb-3 mb-md-0" src="/images/body_bg.jpg" alt="Фото комплейна">
+
             {{--</a>--}}
-        </div>
+        {{--</div>--}}
         <div id="myModal" class="modal">
             <span class="closed">&times;</span>
             <img class="modal-content" id="img01">
@@ -179,11 +188,9 @@
         </script>
 
 
-{{ Form::close() }}
-        <div class="col-md-2" class="form-group">
-        {!! Form::open(['method' => 'DELETE','route' => ['complains.destroy', $complain->id],'style'=>'display:inline']) !!}
-        {!! Form::submit('Видалити', ['class' => 'btn btn-danger btn-block']) !!}
-        {!! Form::close() !!}
-        </div>
+
+        {{--<div class="col-md-2 form-group">--}}
+
+        {{--</div>--}}
     </div>
 @endsection
