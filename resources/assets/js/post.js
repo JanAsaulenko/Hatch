@@ -50,9 +50,13 @@ GoogleMaps.load((google) => {
     let marker;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 6bb9eafa618298bf32f18f0aae3b00bf63fc3792
+=======
+
+>>>>>>> 222053e8b84d571b9c9ec0ea7149a83918c5fabd
     // Create new marker on double click event on the map
     google.maps.event.addListener(map, 'click', function (event) {
         !!marker && marker.setMap(null); //remove marker if marker is true (!! operators)
