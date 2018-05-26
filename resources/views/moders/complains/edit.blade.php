@@ -5,7 +5,7 @@
 <html lang="en">
 
 
-@section('title', 'Form');
+@section('title', 'Form')
 <head>
     <style>
 
