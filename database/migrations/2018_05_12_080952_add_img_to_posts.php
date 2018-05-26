@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Hatch extends Migration
+class AddImgToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class Hatch extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('posts', function($table) {
+            $table->string('img')->nullable();
+        });
     }
 
     /**
@@ -23,6 +25,6 @@ class Hatch extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropColumn('img');
     }
 }
