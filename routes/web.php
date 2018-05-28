@@ -14,27 +14,10 @@
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
-<<<<<<< HEAD
+
 'index','store', 'create']);
-=======
-    'index','store', 'create']);
-
-
-
-
->>>>>>> 222053e8b84d571b9c9ec0ea7149a83918c5fabd
-
-
-
-
 
 Route::get ('/request-form','PostController@show');
-
-
-
-
-
-
 
     Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
 
