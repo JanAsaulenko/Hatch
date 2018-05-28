@@ -40,18 +40,18 @@
             <div class=" col-md-1 col-sm-2 col-xs-4 tdtxt">
 
                 @if ($complain->confirmed == 1)
-                    <i>Затверджена</i>
+                    <i class="far fa-check-square"></i>
 
                 @else
-                    <del>Не затверджена</del>
+                    <i class="fas fa-ban"></i>
                 @endif
             </div>
             <div class=" col-md-1 col-sm-2 col-xs-4 tdtxt">
                 @if ($complain->img)
-                    <i>Присутнє</i>
+                    <i class="far fa-check-square"></i>
 
                 @else
-                    <del>Відсутнє</del>
+                    <i class="fas fa-ban"></i>
                 @endif
             </div>
             <div class=" col-md-1 col-sm-2 col-xs-3 tdtxt">
