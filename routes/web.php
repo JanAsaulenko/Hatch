@@ -14,9 +14,50 @@
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
-'index','store', 'create']);
+    'index','store', 'create']);
 
 
-Route::resource('moders','ModeratorFormController')->only([
-        'index','show','edit']
-);
+
+
+
+
+
+
+
+Route::get ('/request-form','PostController@show');
+
+
+
+
+
+
+
+    Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
+
+
+
+
+
+
+
+
+
+
+
+
+Route::resource('/admin','AdminController')->only([
+    'index']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
