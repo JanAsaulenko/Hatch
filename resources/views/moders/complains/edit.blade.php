@@ -71,7 +71,7 @@
     <div id="myModal" class="modal">
         <span class="closed">&times;</span>
         <img class="modal-content" id="img01">
-        <div id="caption"></div>
+
     </div>
     <script>
         var modal = document.getElementById('myModal');
@@ -83,7 +83,7 @@
         img.onclick = function(){
             modal.style.display = "block";
             modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            
         }
 
 
