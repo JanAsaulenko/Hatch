@@ -26,15 +26,14 @@ Route::resource('/admin','AdminController')->only([
     'index']);
 
 
+Route::group(['middleware' => 'role:admin'], function() {
 
+    Route::get('/admin', 'AdminController@index')->name('admin');
 
+});
+Route::group(['middleware' => 'role:moder'], function() {
 
+    Route::get('/moders', 'Moders\ComplainsController@index')->name('moders');
 
-
-
-
-
-
-
-
+});
 

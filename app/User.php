@@ -27,3 +27,45 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
+
+public function roles()
+{
+    return $this->belongsToMany('App\Role', 'users_roles', 'user_id', 'role_id');
+}
+/**
+ * Проверка принадлежит ли пользователь к какой либо роли
+ *
+ * @return boolean
+ */
+public function isEmployee()
+{
+    $roles = $this->roles->toArray();
+    return !empty($roles);
+}
+/**
+ * Проверка имеет ли пользователь определенную роль
+ *
+ * @return boolean
+ */
+public function hasRole($check)
+{
+    return in_array($check, array_pluck($this->roles->toArray(), 'name'));
+}
+/**
+ * Получение идентификатора роли
+ *
+ * @return int
+ */
+private function getIdInArray($array, $term)
+{
+    foreach ($array as $key => $value) {
+        if ($value == $term) {
+            return $key + 1;
+        }
+    }
+    return false;
+}
+
+public static function getUserName($user){
+    return $user->name;
+}
