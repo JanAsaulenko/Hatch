@@ -15,9 +15,10 @@ class TypeOfComplainsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {$type = TypeOfComplain::all();
+       // return view('admin.index')->withType($type);
 
-       return view('admin.type_complains');
+       return view('admin.type_complains')->withType($type);
     }
 
     /**
@@ -47,7 +48,7 @@ class TypeOfComplainsController extends Controller
        //$request->session()->flash('success','тип жалоб добавлен');
          //
         //
-        return redirect('/admin');
+        return redirect('/type_complain');
 
     }
 
@@ -91,8 +92,10 @@ class TypeOfComplainsController extends Controller
      * @param  \App\TypeOfComplain  $typeComplains
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TypeOfComplain $typeComplains)
+    public function destroy($id)
     {
-        //
+        $type = TypeOfComplain::find($id);
+               $type->delete();
+                return redirect('/type_complain');
     }
 }

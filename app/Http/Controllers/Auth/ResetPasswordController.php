@@ -1,4 +1,4 @@
-<?php
+пш<?php
 
 namespace App\Http\Controllers\Auth;
 

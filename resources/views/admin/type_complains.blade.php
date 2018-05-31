@@ -20,6 +20,29 @@
     @endif
 
 
+        <table class="table">
+
+        <tbody>
+            <thead class="thead-dark">
+            <tr><th scope="col">id</th>
+                <th scope="col">тип жалоб</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+        @foreach($type as $type)
+            <tbody>
+            <tr>
+                <td>{{$type->id}}</td>
+                <td>{{$type->type_complain}}</td>
+
+                <td> {!! Form::open (['method' => 'DELETE','action'  =>['TypeOfComplainsController@destroy',$type->id]]) !!}
+                    {!! Form::submit('Удалить!',['class' => 'btn btn-danger'])!!}
+                    {!! Form::close() !!}</td>
+            </tr>
+            </tbody>
+            @endforeach
+        </table>
+
 
 <div>
     {!! Form::open (array('url' => 'type_complain', 'method' => 'post')) !!}

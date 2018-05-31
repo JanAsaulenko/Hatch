@@ -15,10 +15,10 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">id</th>
-            <th scope="col">username</th>
+            <th scope="col">Имя </th>
             <th scope="col">@ e_mail</th>
-            <th scope="col">role</th>
-            <th scope="col">Change</th>
+            <th scope="col">роль</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         @foreach($users as $users)
