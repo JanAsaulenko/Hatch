@@ -7,11 +7,10 @@
  */
 
 namespace App\Http\Controllers;
-
-
  use App\Http\Requests\PostRequest;
  use App\Post;
  use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
 
  class PostController extends Controller
 {
@@ -24,6 +23,11 @@ namespace App\Http\Controllers;
     function create (Post $post){
         return view('post.create')->with('post', $post);
     }
+    function home(){
+        $posts = Post::all()
+            ->take(5);
+           return view('post.fiveLatest')->with('posts',$posts);
+    }
 
      /**
       * @param PostRequest $req
@@ -35,7 +39,7 @@ namespace App\Http\Controllers;
         $validated = $req->validated();
         $post->create($req->all());
         \Session::flash('Sucsess','Office successfully added.');
-        return  redirect('/posts/create');
+        return  redirect('/');
 
     }
 }

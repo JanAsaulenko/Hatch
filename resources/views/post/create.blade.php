@@ -25,9 +25,11 @@
               <div id="map" class="{{ $errors->has('map') ? 'has-error' : '' }}"></div>
             </div>
 
-
             <div class="col-md-4">
-              {{--{{Form::photo('photo','Photo' [class =>])}}--}}
+              <div class="form-group">
+                {!! Form::label('image', 'Image:')!!}
+                {!! Form::file('img',['class' => 'form-control'])!!}
+              </div>
               {{ Form::label('title', 'Title', ['class' => 'control-label']) }}
               {{ Form::text('title', null, [
                   'class' => $errors->has('title') ? 'has-error' : '',

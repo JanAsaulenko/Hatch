@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
@@ -26,14 +26,23 @@ Route::resource('/admin','AdminController')->only([
     'index']);
 
 
-Route::group(['middleware' => 'role:admin'], function() {
 
-    Route::get('/admin', 'AdminController@index')->name('admin');
 
-});
-Route::group(['middleware' => 'role:moder'], function() {
 
-    Route::get('/moders', 'Moders\ComplainsController@index')->name('moders');
 
-});
+
+
+    Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
+    
+
+Route::resource('/admin','AdminController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::resource('/type_complain','TypeOfComplainsController');
 

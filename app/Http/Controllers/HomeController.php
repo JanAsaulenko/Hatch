@@ -1,19 +1,37 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ян
- * Date: 10.04.2018
- * Time: 0:39
- */
 
 namespace App\Http\Controllers;
+use App\Post;
+use Illuminate\Http\Request;
 
-
-class HomeController
+class HomeController extends Controller
 {
-    public function show()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('home');
+//        $this->middleware('auth');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+//    public function index()
+//    {
+//        return view('home');
+//    }
+
+    public function show()
+    {
+        $posts = Post::all()
+            ->reverse()
+            ->take(6);
+
+        return view('home')->with('posts',$posts);
+    }
 }

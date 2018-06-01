@@ -19,12 +19,11 @@ class CreateTasksTable extends Migration
             $table->text("comments");
 
 
-
-
             $table->boolean('confirmed')->nullable();
 
             $table->double('lat');
             $table->double("lng");
+
 
             $table->timestamps();
         });
