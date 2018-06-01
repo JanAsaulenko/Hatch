@@ -10,21 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
-    'index','store', 'create']);
 
-
-
-
-
-
-
-
+'index','store','home', 'create']);
 
 Route::get ('/request-form','PostController@show');
+
 
 
 
@@ -56,8 +50,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/type_complain','TypeOfComplainsController');
 
-/*Route::group(['middleware'=>['auth','admin']] ,function(){
-
-    Route::resource('/admin','AdminController')->only([
-        'index']);
-});*/
