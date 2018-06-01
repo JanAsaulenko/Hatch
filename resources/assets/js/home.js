@@ -9,7 +9,7 @@ GoogleMaps.load((google) => {
     const vinnytsia = new google.maps.LatLng(49.234741, 28.472035);
     const map = new google.maps.Map(mapNode, {
         center: vinnytsia,
-        zoom: 16,
+        zoom: 12,
     });
     let infoWindow = new google.maps.InfoWindow({map: map});
     let geoloc = function () {

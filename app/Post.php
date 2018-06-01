@@ -15,5 +15,9 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title'];
+    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title','img'];
+
+    public static function table()
+    {
+    }
 }

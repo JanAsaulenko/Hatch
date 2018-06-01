@@ -12,7 +12,7 @@
         <li class="nav-item {{ (request()->is('/') ? 'active' : '') }}">
         </li>
         <li class="nav-item {{ (request()->is('posts/create') ? 'active' : '') }}">
-          <a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>
+          {{--<a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>--}}
         </li>
         <li class="nav-item {{ (request()->is('posts') ? 'active' : '') }}">
           <a class="nav-link" href="{{ url('/posts') }}"><h6><b>ПОКАЗАТИ ВС1</b></h6></a>
