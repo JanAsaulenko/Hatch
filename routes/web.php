@@ -14,10 +14,21 @@
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
+
 'index','store', 'create']);
 
 
 
+Route::get ('/request-form','PostController@show');
+
+
+
+
+
+
+
+
+    Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
 
 
 
@@ -29,20 +40,15 @@ Route::resource('/posts','PostController')->only([
 
 
 
-    Route::resource('/moders/complains', 'Moders\ComplainsController')->only([
-        'index','edit','update','show'
-    ]);
+
+Route::resource('/admin','AdminController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-
-
-
-
-
-
-
-
-Route::resource('/admin','AdminController')->only([
-    'index']);
+Route::resource('/type_complain','TypeOfComplainsController');
 

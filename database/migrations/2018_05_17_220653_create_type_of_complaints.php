@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddImgToPosts extends Migration
+class CreateTypeOfComplaints extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddImgToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function(Blueprint $table)
-        {
-            $table->string('img');
-        });
+        Schema::create('type_of_complains', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('type_complain');
+            $table->timestamps();
+    });
     }
 
     /**
@@ -26,10 +27,8 @@ class AddImgToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function(Blueprint $table)
-        {
-            $table->dropColumn('img');
-        });
-
+        Schema::dropIfExists('type_of_complains');
     }
 }
+
+
