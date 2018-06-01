@@ -10,14 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 Route::get('/', 'HomeController@show');
 
 Route::resource('/posts','PostController')->only([
 
-'index','store', 'create']);
-
-
+'index','store','home', 'create']);
 
 Route::get ('/request-form','PostController@show');
 

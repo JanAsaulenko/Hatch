@@ -16,7 +16,7 @@
       <!-- Form Module-->
       <div class="module form-module">
         <div class="form container-fluid">
-          {{ Form::model($type_complain, ['url' => 'posts', 'method' => 'post']) }}
+          {{ Form::model($post, ['url' => 'posts', 'method' => 'post']) }}
           @csrf
           {{ Form::hidden('lat', null, ['id' => 'lat']) }}
           {{ Form::hidden('lng', null, ['id' => 'lng']) }}

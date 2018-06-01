@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Created by PhpStorm.
  * User: Ян
@@ -7,12 +7,10 @@
  */
 
 namespace App\Http\Controllers;
-
-
  use App\Http\Requests\PostRequest;
  use App\Post;
  use Illuminate\Http\Request;
- use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 
  class PostController extends Controller
 {
@@ -25,10 +23,10 @@ namespace App\Http\Controllers;
     function create (Post $post){
         return view('post.create')->with('post', $post);
     }
-        function home(){
-        $posts = Post::table();
-        return view('post.home','posts')->orderBy('created_at')->take(5)->get()->reverse();
-
+    function home(){
+        $posts = Post::all()
+            ->take(5);
+           return view('post.fiveLatest')->with('posts',$posts);
     }
 
      /**
