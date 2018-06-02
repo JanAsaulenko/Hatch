@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Database\Query\Builder;
 
 /**
  * Class Post
@@ -20,4 +22,6 @@ class Post extends Model
     public static function table()
     {
     }
+
+
 }

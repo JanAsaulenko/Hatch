@@ -1,11 +1,15 @@
-
+body{
+  background-color: black;
+}
 #picture.img {
   width: 100%;
   height: 100px;
   background-color: grey;
   font-size: 12px;
 }
-
+.container{
+  background-color: white;
+}
 
 .rightForm {
   margin-top: 5px;
@@ -15,7 +19,7 @@ ul{
 }
 #map_interactive {
   width: 100%;
-  height: 400px;
+  height: 450px;
   background-color: grey;
   font-size: 12px;
   margin-bottom: 15px;
@@ -25,4 +29,5 @@ ul{
 #geo {
   border-style: none;
   background-color: #e9e9e9;
+  padding-left: 0;
 }
