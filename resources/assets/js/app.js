@@ -3,3 +3,4 @@ import './post';
 import './card';
 // import './configs/mapMain';
 import './complain';
+import './districts';

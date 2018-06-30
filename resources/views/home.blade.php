@@ -3,7 +3,11 @@
 @section('title', 'Home')
 
 @section('content')
-
+<div class="video-main">
+  {{--<video id="video" loop preload="auto" muted poster="assets/4p.png" autoplay style="position: absolute; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000;  ">--}}
+    {{--<source src="{{ asset('/assets/video/Office.mp4') }}" type="video/webm">--}}
+  {{--</video>--}}
+</div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10">
@@ -12,7 +16,7 @@
       <div class="col-md-2" id ="rightForm">
         <br>
         <hr>
-        <a class="nav-link" style="margin: 0; padding: 0" href="#fiveLatest"><i class="fas fa-calendar-alt"><b style="color: #17a2b8"> 5 останн1х запис1в</b></i></a>
+        <a class="nav-link" style="margin: 0; padding: 0" href="#fiveLatest"><i class="fas fa-calendar-alt"><b style="color: #17a2b8"> 6 последних записей</b></i></a>
 
         <br>
         <hr>
@@ -28,23 +32,27 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-8">
-      </div>
-      <div class="col-sm">
+<div class="districts">
+
+</div>
+  {{--<div class="container-fluid">--}}
+    {{--<div class="row">--}}
+      {{--<div class="col-sm-8">--}}
+      {{--</div>--}}
+      {{--<div class="col-sm">--}}
         {{--class="nav-item {{ (request()->is('posts/create') ? 'active' : '') }}">--}}
-        <a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>
-        <div class="row" id="fiveLatest">
-          @foreach($posts as $post)
-            <div class="col-md-6">
-              @include('post._card', ['post' => $post])
-            </div>
-          @endforeach
-        </div>
-      </div>
-    </div>
-  </div>
+        {{--<a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>--}}
+        {{--<div class="row" id="fiveLatest">--}}
+          {{--@foreach($posts as $post)--}}
+            {{--<div class="col-md-6">--}}
+              {{--@include('post._card', ['post' => $post])--}}
+            {{--</div>--}}
+          {{--@endforeach--}}
+        {{--</div>--}}
+       {{----}}
+      {{--</div>--}}
+    {{--</div>--}}
+  {{--</div>--}}
 
 
   @endsection
