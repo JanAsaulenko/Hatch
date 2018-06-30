@@ -20,6 +20,8 @@ class CreateDistrictsTable extends Migration
             $table->string('img')->nullable();
             $table->double('lat')->nullable();
             $table->double("lng")->nullable();
+            $table->double("zoom")->nullable();
+
             $table->timestamps();
         });
     }

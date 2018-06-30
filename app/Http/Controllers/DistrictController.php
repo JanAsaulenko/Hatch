@@ -32,9 +32,12 @@ class DistrictController extends Controller
 
     public function index($title){
         $currentDistrict = $this->checkDistrict($title);
-        $postsJson = $this->PostsToJson($currentDistrict->posts);
-        $currentDistrictJson = $this->distrisctToJson($currentDistrict);
-        dd($currentDistrictJson);
-        return view('home',['district'=>$currentDistrictJson , 'posts'=>$postsJson]);
+        $all_districts = District::all();
+
+        return view('districts.district_page',[
+            'districts'=>$all_districts,
+            'district'=> json_encode($currentDistrict) ,
+            'posts'=>$currentDistrict->posts
+        ]);
     }
 }
