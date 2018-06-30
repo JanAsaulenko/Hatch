@@ -25,7 +25,7 @@ function loadDistricts(data){
             out+=`</a>`;
             out += `</div>`
         }
-        $('.districts').html(out);
+        $('.districts-name').html(out);
 }
 loadDistricts(districts);
 
