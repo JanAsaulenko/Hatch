@@ -5,7 +5,6 @@
 @section('content')
   <div class="position-block">
         <div id="map_interactive"></div>
-
         <div  id ="rightForm">
         <br>
         <hr>
@@ -13,7 +12,7 @@
         <br>
         <hr>
         <i class="fas fa-edit" style="color: #17a2b8">Свободное поле</i>
-        <br>gi
+        <br>
         <hr>
         <a class="nav-link" style="margin: 0; padding: 0; color: #17a2b8" href="{{ url('/posts') }}"><i class="fas fa-folder"><b> Показати вс1</b></i></a>
         <br>
@@ -27,10 +26,11 @@
       <span class="title">Раёны нашего города</span>
 </div>
 
-<div class="districts-name">
-
-</div>
-
+      {{--@foreach($districts as $district)--}}
+            {{--<div class="districts-name">--}}
+            {{--@include('districts._district',['district'=>$district])--}}
+            {{--</div>--}}
+        {{--@endforeach--}}
   {{--<div class="container-fluid">--}}
     {{--<div class="row">--}}
       {{--<div class="col-sm-8">--}}
