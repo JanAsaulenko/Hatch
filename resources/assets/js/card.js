@@ -1,33 +1,6 @@
 import Swiper from "swiper"
 import $ from "jquery";
 
-const districts = {
-    "12134":{
-        "name":"Leninskiy",
-        "image":"style='background-image:url({{asset('images/body_bg.jpg')}})'"
-    },
-    "12132":{
-        "name":"Zamostianskiy"
-    },
-    "12135":{
-        "name":"Staromiskiy",
-    }
-}
-
-// function loadDistricts(data){
-//
-//         let out = '';
-//         for (let key in data) {
-//             out += `<div class="district>`;
-//             out+= `<a href="district/${data[key].name}">`;
-//             out += '<span class="district-name">' + data[key].name + '<span/>';
-//             out += `<img  class="district-image" src=${data[key].image}>`;
-//             out+=`</a>`;
-//             out += `</div>`
-//         }
-//         $('.districts-name').html(out);
-// }
-// loadDistricts(districts);
 
 const galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,

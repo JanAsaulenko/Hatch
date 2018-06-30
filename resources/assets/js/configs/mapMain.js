@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import GoogleMaps from 'google-maps';
 GoogleMaps.KEY = 'AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg';
-
 const defaultConfig = {
     zoom: 14,
     center: {
@@ -9,12 +8,13 @@ const defaultConfig = {
         lng: 28.472035
     }
 };
-const mapNode = document.getElementById('map');
+const mapNode = document.getElementById('map_interactive');
 
 
 class Map {
     constructor($container, config) {
-        this.config = $.extends({}, defaultConfig, config);
+        this.config = $.extend({}, defaultConfig, config);
+        console.log(this.config)
         this.onInit = new Promise(function (resolve, reject) {
             GoogleMaps.load(google => {
                 this.map = new google.map($container, this.config);

@@ -35,6 +35,6 @@ class DistrictController extends Controller
         $all_districts = District::all();
 
 
-        return view('home',['districts'=>$all_districts ]);
+        return view('districts._district_page',['districts'=>$all_districts ]);
     }
 }
