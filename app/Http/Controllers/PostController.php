@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Storage;
       */
      function create (Post $post){
 //        $image = Storage::putFile('images',$post->file('img'));
-
+//
 //        $this->validate($post->img,[
 //         $poster= $post;
 //        $image = $poster->file('img')->store('images');
