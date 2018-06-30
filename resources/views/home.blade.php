@@ -3,21 +3,12 @@
 @section('title', 'Home')
 
 @section('content')
-<div class="video-main">
-  {{--<video id="video" loop preload="auto" muted poster="assets/4p.png" autoplay style="position: absolute; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000;  ">--}}
-    {{--<source src="{{ asset('/assets/video/Office.mp4') }}" type="video/webm">--}}
-  {{--</video>--}}
-</div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-10">
+  <div class="position-block">
         <div id="map_interactive"></div>
-      </div>
-      <div class="col-md-2" id ="rightForm">
+        <div  id ="rightForm">
         <br>
         <hr>
         <a class="nav-link" style="margin: 0; padding: 0" href="#fiveLatest"><i class="fas fa-calendar-alt"><b style="color: #17a2b8"> 6 последних записей</b></i></a>
-
         <br>
         <hr>
         <i class="fas fa-edit" style="color: #17a2b8">Свободное поле</i>
@@ -30,10 +21,16 @@
         <br>
         <hr>
       </div>
-    </div>
   </div>
-<div class="districts">
+<div class="district-title">
+      <span class="title">Раёны нашего города</span>
+</div>
+<div class="districts-name">
+      @foreach($districts as $district)
 
+            @include('districts._district',['district'=>$district])
+
+        @endforeach
 </div>
   {{--<div class="container-fluid">--}}
     {{--<div class="row">--}}

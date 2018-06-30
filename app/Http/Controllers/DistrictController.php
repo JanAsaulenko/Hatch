@@ -31,7 +31,6 @@ class DistrictController extends Controller
 
     public function index($title){
         $currentDistrict = $this->checkDistrict($title);
-
         //dd( $this->distrisctToJson( $currentDistrict->id ));
         $all_districts = District::all();
 

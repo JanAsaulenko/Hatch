@@ -21,12 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
 
 
         $all_districts = District::all();
-
         $posts = Post::all();
 //            ->reverse()
 //            ->take(6);

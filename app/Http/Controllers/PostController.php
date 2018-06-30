@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Storage;
       * @return $this
       */
      function create (Post $post){
+
 //        $image = Storage::putFile('images',$post->file('img'));
 //
 //        $this->validate($post->img,[
@@ -34,6 +35,7 @@ use Illuminate\Support\Facades\Storage;
 //        $new_name=rand() . '.' .getClientOriginalExtension();
 //        $image->move(public_path('images'),$new_name);
 //        return view('post.create')->with('post', $post)->with('path',$new_name);
+
         return view('post.create')->with('post', $post);
     }
     function home(){
