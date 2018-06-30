@@ -4,7 +4,7 @@
 
 @section('content')
   <div class="pen-title">
-    <h1>ВС! СКАРГИ</h1>
+    <h1>ВСЕ ЗАМЕЧАНИЕ</h1>
   </div>
   <div class="row">
     @foreach($posts as  $post)

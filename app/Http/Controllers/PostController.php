@@ -10,7 +10,8 @@ namespace App\Http\Controllers;
  use App\Http\Requests\PostRequest;
  use App\Post;
  use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
+ use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\Storage;
 
  class PostController extends Controller
 {
@@ -20,7 +21,19 @@ namespace App\Http\Controllers;
         return view('post.index')->with('posts', $posts);
     }
 
-    function create (Post $post){
+     /**
+      * @param Post $post
+      * @return $this
+      */
+     function create (Post $post){
+//        $image = Storage::putFile('images',$post->file('img'));
+
+//        $this->validate($post->img,[
+//         $poster= $post;
+//        $image = $poster->file('img')->store('images');
+//        $new_name=rand() . '.' .getClientOriginalExtension();
+//        $image->move(public_path('images'),$new_name);
+//        return view('post.create')->with('post', $post)->with('path',$new_name);
         return view('post.create')->with('post', $post);
     }
     function home(){
