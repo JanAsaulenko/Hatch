@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class District extends Model
+class Category extends Model
 {
     //
-    protected $table = 'districts';
+    protected $table = "categories";
 
     public function posts()
     {
         return $this->hasMany('App\Post');
     }
+
 }

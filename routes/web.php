@@ -13,35 +13,20 @@
 
 Route::get('/', 'HomeController@index');
 
-
 Route::resource('/posts', 'PostController')->only([
     'index', 'store', 'home', 'create']);
 
 Route::group(['prefix' => '/district'], function () {
-
-
     Route::get('/{title}/', 'DistrictController@index')->name('someDistrict');
-
     Route::get('/{title}/reg', function ($title) {
         return $title . 'registration user in cocnret district';
     });
-
-
 });
 
 Route::get('/request-form', 'PostController@show');
-
-
 Route::resource('/moders/complains', 'Moders\ComplainsController')->middleware('x');
-
-
 Route::resource('/admin', 'AdminController');
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::resource('/type_complain', 'TypeOfComplainsController');
 

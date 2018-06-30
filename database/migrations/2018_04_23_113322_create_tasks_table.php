@@ -17,14 +17,12 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->text("comments");
-
-
             $table->boolean('confirmed')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('district_id')->nullable();
 
             $table->double('lat');
             $table->double("lng");
-
-
             $table->timestamps();
         });
     }
