@@ -14,9 +14,8 @@
 
 @include('layout._header')
 
-<main class="container">
+
     @yield('content')
-</main>
 
 @include('layout._footer')
 
