@@ -64,5 +64,27 @@ class DatabaseSeeder extends Seeder
 
 
 
+
+        DB::table('categories')->insert([
+            'name' => 'Скарга',
+            'description'=>'Вся хреть якуможна назвати скаргою'
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Пропозиція',
+            'description'=>'Хочу Хочу ... '
+        ]);
+        DB::table('categories')->insert([
+            'name' => 'Ваканція',
+            'description'=>'Хрень тіпа: Треба грузчики . 400 мішків строй мусора. 1000 грн'
+        ]);
+
+
+
+
+
+
+
+
+
     }
 }

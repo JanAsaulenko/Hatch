@@ -17,11 +17,23 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title','img'];
+    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title','img','category_id'];
 
     public static function table()
     {
     }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
+
+
 
 
 }
