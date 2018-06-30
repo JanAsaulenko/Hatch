@@ -23,6 +23,8 @@ class DistrictController extends Controller
             'name'=> $currentDistrict->name,
             'title'=> $currentDistrict->title,
             'image'=> $currentDistrict->image,
+            'lat'=>$currentDistrict->lat,
+            'lng'=>$currentDistrict->lat
         ];
         return json_encode($district);
     }
@@ -31,7 +33,7 @@ class DistrictController extends Controller
 
     public function index($title){
         $currentDistrict = $this->checkDistrict($title);
-        //dd( $this->distrisctToJson( $currentDistrict->id ));
+//        dd( $this->distrisctToJson( $currentDistrict->id ));
         $all_districts = District::all();
 
 
