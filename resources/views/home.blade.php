@@ -25,12 +25,13 @@
 <div class="district-title">
       <span class="title">Раёны нашего города</span>
 </div>
+<div class="districts-name">
+      @foreach($districts as $district)
 
-      {{--@foreach($districts as $district)--}}
-            {{--<div class="districts-name">--}}
-            {{--@include('districts._district',['district'=>$district])--}}
-            {{--</div>--}}
-        {{--@endforeach--}}
+            @include('districts._district',['district'=>$district])
+
+        @endforeach
+</div>
   {{--<div class="container-fluid">--}}
     {{--<div class="row">--}}
       {{--<div class="col-sm-8">--}}

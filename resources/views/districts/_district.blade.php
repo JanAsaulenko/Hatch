@@ -1,6 +1,6 @@
 <div class="district">
-  <a href="{{$district->id}}">
+    <a href="{{$district->title}}">
     <span class="district-name"> {{$district->name}}</span>
-  <span class="district-image"> {{$disrict->image}}</span>
+     <span class="district-image"> {{$district->image}}</span>
   </a>
 </div>
