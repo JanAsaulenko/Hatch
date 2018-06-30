@@ -46,6 +46,20 @@ class DatabaseSeeder extends Seeder
             'lat' => '112233',
             'lng' => '445566',
         ]);
+        DB::table('districts')->insert([
+            'name' => 'Замостянский',
+            'title'=> 'zamostianskiy',
+
+            'lat' => '112233',
+            'lng' => '445566',
+        ]);
+        DB::table('districts')->insert([
+            'name' => 'Староміський',
+            'title'=> 'staromiskiy',
+
+            'lat' => '112233',
+            'lng' => '445566',
+        ]);
 
 
 
