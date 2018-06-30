@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Database\Query\Builder;
 
 /**
  * Class Post
@@ -15,5 +17,11 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title'];
+    protected $fillable = ['username', 'comments', 'lat', 'lng', 'title','img'];
+
+    public static function table()
+    {
+    }
+
+
 }

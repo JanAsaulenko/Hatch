@@ -1,4 +1,33 @@
 import Swiper from "swiper"
+import $ from "jquery";
+
+const districts = {
+    "12134":{
+        "name":"Leninskiy",
+        "image":"{{ asset('/assets/images/body_bg') }}"
+    },
+    "12132":{
+        "name":"Zamostianskiy"
+    },
+    "12135":{
+        "name":"Staromiskiy",
+    }
+}
+
+function loadDistricts(data){
+
+        let out = '';
+        for (let key in data) {
+            out += `<div class="district">`;
+            out+= `<a href="district/${data[key].name}">`;
+            out += '<span class="district-name">' + data[key].name + '<span/>';
+            out += `<img  class="district-image" src=${data[key].image}>`;
+            out+=`</a>`;
+            out += `</div>`
+        }
+        $('.districts').html(out);
+}
+loadDistricts(districts);
 
 const galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
