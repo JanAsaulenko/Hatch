@@ -20,7 +20,21 @@ Route::get('/', 'HomeController@show');
 Route::resource('/posts','PostController')->only([
     'index','store','home', 'create']);
 
+Route::group(['prefix'=>'/district'] , function(){
 
+
+
+
+    Route::get('/{title}/', 'DistrictController@index');
+
+    Route::get('/{title}/reg',function($title){
+        return $title.'registration user in cocnret district';
+    });
+
+
+
+
+});
 
 Route::get ('/request-form','PostController@show');
 
