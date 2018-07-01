@@ -14,7 +14,6 @@
         <a class="nav-link" href="{{ url('/posts/create') }}"><h6><b>СТВОРИТИ СКАРГУ</b></h6></a>
         <div class="row" id="fiveLatest">
         </div>
-
       </div>
     </div>
   </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Post;
 use Illuminate\Http\Request;
 use App\District;
 
@@ -16,25 +18,27 @@ class DistrictController extends Controller
     }
 
     public function distrisctToJson( $id ) {
-
         $currentDistrict  = District:: findOrFail( $id );
-        $district = [
-            'id'=> $currentDistrict->id,
-            'name'=> $currentDistrict->name,
-            'title'=> $currentDistrict->title,
-            'image'=> $currentDistrict->image,
-        ];
-        return json_encode($district);
+
+        return json_encode($currentDistrict);
+    }
+
+
+    public function PostsToJson($post){
+        return json_encode($post) ;
     }
 
 
 
     public function index($title){
         $currentDistrict = $this->checkDistrict($title);
-        //dd( $this->distrisctToJson( $currentDistrict->id ));
         $all_districts = District::all();
 
 
-        return view('districts._district_page',['districts'=>$all_districts ]);
+        return view('districts.district_page',[
+            'districts'=>$all_districts,
+            'district'=> $currentDistrict,
+            'posts'=>$currentDistrict->posts
+        ]);
     }
 }
