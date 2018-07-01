@@ -8,6 +8,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
+
+        <div class="districts-name">{{$district->name}}
+        </div>
       </div>
       <div class="col-sm">
         <div class="nav-item {{ (request()->is('posts/create') ? 'active' : '') }}">
@@ -16,6 +19,11 @@
         </div>
       </div>
     </div>
+
   </div>
   </div>
+
+
+
+
 @endsection
