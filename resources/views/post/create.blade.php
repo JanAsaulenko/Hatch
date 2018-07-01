@@ -10,7 +10,7 @@
             <div class="alert alert-success"><em> {!! session('Sucsess') !!}</em></div>
           @endif
         </div>
-        <h1>Форма заполнения</h1>
+        <h1>Оставить отзыв</h1>
 
       </div>
       <!-- Form Module-->

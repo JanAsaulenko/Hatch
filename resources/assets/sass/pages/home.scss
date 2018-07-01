@@ -1,8 +1,5 @@
-body{
-  background-color: black;
-}
-.video-main{
-  position: fixed;
+body {
+  background-color: white;
 }
 #picture.img {
   width: 100%;
@@ -24,15 +21,30 @@ body{
 }
 .district{
   display: flex;
-  flex-direction: row;
-  border: 2px solid black;
+  flex-direction: column;
+
 }
 .district :hover{
-  background-color: grey;
-  opacity: 0.5;
+
+}
+
+.pictures{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 5%;
+}
+
+.pictures img{
+width: 300px;
+  height: 350px;
+}
+.pictures img:hover{
+  width: 305px;
+  height: 355px;
 }
 #rightForm {
-padding-left: 15px;
+  padding-left: 15px;
 }
 ul{
   text-decoration: none;
@@ -40,7 +52,7 @@ ul{
 .position-block{
   position: relative;
   width: 100%;
-  height: 500px;
+  //height: 500px;
 }
 #map_interactive {
   width: 100%;
@@ -55,9 +67,123 @@ ul{
 .districts{
   position: relative;
   top:10%;
+  margin-bottom: 70px;
 }
 #geo {
-  //border-style: none;
-  //background-color: #e9e9e9;
+
+  padding-left: 0;
+}
+
+
+.page-footer {
+
+
+
+}
+
+
+.footer{
+
+  text-align: center;
+}
+
+.swiper-container {
+  background-color: #4e555b;
+
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  height: 400px;
+  font-size: 18px;
+  z-index: -1;
+  opacity: 0.4;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+body{
+  background-color: white;
+}
+.video-main{
+  position: fixed;
+}
+#picture.img {
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  font-size: 12px;
+}
+.district-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.districts-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.posts-name{
+  display: flex;
+  font-size: 25px;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+.district{
+  display: flex;
+  flex-direction:column;
+  color:grey;
+}
+.district :hover{
+  background-color: grey;
+  opacity: 0.5;
+}
+#rightForm {
+  padding-left:15px;
+}
+ul{
+  text-decoration: none;
+}
+.position-block{
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+#map_interactive {
+  width: 100%;
+  height: 450px;
+  background-color: grey;
+  font-size: 12px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+}
+#map_district {
+  width: 100%;
+  height: 450px;
+  background-color: grey;
+  font-size: 12px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+}
+
+#geo {
+  border-style: none;
+  background-color: #e9e9e9;
   padding-left: 0;
 }

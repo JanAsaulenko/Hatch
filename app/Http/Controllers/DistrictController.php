@@ -34,7 +34,8 @@ class DistrictController extends Controller
         $currentDistrict = $this->checkDistrict($title);
         $all_districts = District::all();
 
-        return view('districts.district_page',[
+
+        return view('districts._district_page',[
             'districts'=>$all_districts,
             'district'=> $currentDistrict,
             'posts'=>$currentDistrict->posts
