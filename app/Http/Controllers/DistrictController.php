@@ -30,6 +30,19 @@ class DistrictController extends Controller
 
 
 
+
+
+    public function getDistrict(Request $request){
+        //return response();
+//        return response('Hello World', 200)
+//            ->header('Content-Type', 'text/plain');
+
+//        $request->district_id;
+            $district_property = District::findOrFail($request->district_id);
+        return response()->json(array('msg'=> $district_property->toJson() ), 200);
+    }
+
+
     public function index($title){
         $currentDistrict = $this->checkDistrict($title);
         $all_districts = District::all();

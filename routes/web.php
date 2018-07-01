@@ -17,6 +17,7 @@ Route::resource('/posts', 'PostController')->only([
     'index', 'store', 'home', 'create']);
 
 Route::group(['prefix' => '/district'], function () {
+    Route::post('/getDistrict','DistrictController@getDistrict')->name('getDistrict');
     Route::get('/{title}/', 'DistrictController@index')->name('someDistrict');
     Route::get('/{title}/reg', function ($title) {
         return $title . 'registration user in cocnret district';
