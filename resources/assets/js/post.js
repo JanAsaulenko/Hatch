@@ -4,6 +4,42 @@ import GoogleMaps from 'google-maps';
 import { Modal } from 'bootstrap';
 
 
+
+
+
+
+
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+
+    direction: 'horizontal',
+    loop: true,
+    resize:500,
+
+
+    pagination: {
+        el: '.swiper-pagination',
+
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+
+    // And if we need scrollbar
+
+});
+
+
+
+
+
+
+//
 // const galleryTop = new Swiper('.gallery-top', {
 //     spaceBetween: 10,
 //     navigation: {
@@ -22,14 +58,14 @@ import { Modal } from 'bootstrap';
 //     galleryTop[key].controller.control = galleryThumbs[key];
 //     galleryThumbs[key].controller.control = galleryTop[key];
 // });
-
-$('.js-show-map-modal').click(function () {
-    const lat = $(this).data('lat');
-    const lng = $(this).data('lng');
-    const lngNode = document.getElementById('lng');
-    const latNode = document.getElementById('lat');
-    console.log(lat, 'and', lng);
-});
+//
+// $('.js-show-map-modal').click(function () {
+//     const lat = $(this).data('lat');
+//     const lng = $(this).data('lng');
+//     const lngNode = document.getElementById('lng');
+//     const latNode = document.getElementById('lat');
+//     console.log(lat, 'and', lng);
+// });
 
 // GoogleMaps.KEY = 'AIzaSyA05esJ-MwwOjDViI7mZBvbt-wUPkrEoXg';
 

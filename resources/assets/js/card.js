@@ -1,6 +1,7 @@
 import Swiper from "swiper"
 import $ from "jquery";
 
+
 const districts = {
     "12134":{
         "name":"Leninskiy",
