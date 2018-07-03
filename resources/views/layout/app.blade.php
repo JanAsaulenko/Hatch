@@ -17,7 +17,7 @@
 
     @yield('content')
 
-{{--@include('layout._footer')--}}
+{{--gitgit --}}
 
 
 <script src = {{ asset("js/app.js") }}></script>

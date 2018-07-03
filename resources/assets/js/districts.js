@@ -1,10 +1,8 @@
 import GoogleMaps from "google-maps";
 import  $ from 'jquery';
 
-$(document).ready(init(),loadImg());
-function loadImg() {
-    console.log(document.getElementById('lego'))
-}
+$(document).ready(init());
+
 function init () {
     GoogleMaps.load((google) => {
 
